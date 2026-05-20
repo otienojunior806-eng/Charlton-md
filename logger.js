@@ -4,14 +4,14 @@ const fs = require('fs');
 const path = require('path');
 const chalk = require('chalk');
 
-const keithPurple = chalk.hex('#A020F0');
-const keithBlue = chalk.hex('#1DA1F2');
-const keithPink = chalk.hex('#FF69B4');
-const keithGreen = chalk.hex('#2ECC71');
-const keithOrange = chalk.hex('#FFA500');
-const keithGold = chalk.hex('#FFD700');
-const keithRed = chalk.hex('#E74C3C');
-const keithYellow = chalk.hex('#F1C40F');
+const chartonPurple = chalk.hex('#A020F0');
+const chartonBlue = chalk.hex('#1DA1F2');
+const chartonPink = chalk.hex('#FF69B4');
+const chartonGreen = chalk.hex('#2ECC71');
+const chartonOrange = chalk.hex('#FFA500');
+const chartonGold = chalk.hex('#FFD700');
+const chartonRed = chalk.hex('#E74C3C');
+const chartonYellow = chalk.hex('#F1C40F');
 
 const BOT_SYMBOL = '✦';
 const MESSAGE_SYMBOL = '✉';
@@ -30,7 +30,7 @@ if (!fs.existsSync(logsDir)) {
     fs.mkdirSync(logsDir);
 }
 
-class KeithLogger {
+class ChartonLogger {
     static setClientInstance(clientInstance) {
         this.client = clientInstance;
     }
@@ -38,7 +38,7 @@ class KeithLogger {
     static async logMessage(m) {
         try {
             if (!this.client) {
-                console.log(keithYellow.bold(`${WARNING_SYMBOL} KeithLogger: Client instance not set yet`));
+                console.log(chartonYellow.bold(`${WARNING_SYMBOL} ChartonLogger: Client instance not set yet`));
                 return;
             }
 
@@ -122,44 +122,44 @@ class KeithLogger {
                 }
             }
 
-            console.log(keithPurple.bold(`\t ${BOT_SYMBOL} ${BOT_SYMBOL} ${BOT_SYMBOL} { K E I T H - M D } ${BOT_SYMBOL} ${BOT_SYMBOL} ${BOT_SYMBOL}`));
-            console.log(keithGold.bold("╔════════════════════════════╗"));
+            console.log(chartonPurple.bold(`\t ${BOT_SYMBOL} ${BOT_SYMBOL} ${BOT_SYMBOL} { C H A R L T O N - M D } ${BOT_SYMBOL} ${BOT_SYMBOL} ${BOT_SYMBOL}`));
+            console.log(chartonGold.bold("╔════════════════════════════╗"));
             
             if (isBroadcast) {
-                console.log(keithGold.bold(`║ ${BROADCAST_SYMBOL}  B R O A D C A S T  ${BROADCAST_SYMBOL} ║`));
+                console.log(chartonGold.bold(`║ ${BROADCAST_SYMBOL}  B R O A D C A S T  ${BROADCAST_SYMBOL} ║`));
             } else {
-                console.log(keithGold.bold(`║ ${MESSAGE_SYMBOL}   N E W   M E S S A G E   ${MESSAGE_SYMBOL} ║`));
+                console.log(chartonGold.bold(`║ ${MESSAGE_SYMBOL}   N E W   M E S S A G E   ${MESSAGE_SYMBOL} ║`));
             }
-            console.log(keithGold.bold("╚════════════════════════════╝"));
+            console.log(chartonGold.bold("╚════════════════════════════╝"));
             
             if (isBroadcast) {
-                console.log(keithGreen(`${BROADCAST_SYMBOL} Broadcast Status from: `) + keithBlue.bold(senderName));
+                console.log(chartonGreen(`${BROADCAST_SYMBOL} Broadcast Status from: `) + chartonBlue.bold(senderName));
             } else if (isGroup) {
-                console.log(keithGreen(`${GROUP_SYMBOL} Group: `) + keithBlue.bold(groupName));
-                console.log(keithGreen(`   ↳ Group ID: `) + keithOrange(`(${groupId})`));
-                console.log(keithGreen(`${USER_SYMBOL} Sender: `) + keithPink.bold(`[${senderName}]`));
+                console.log(chartonGreen(`${GROUP_SYMBOL} Group: `) + chartonBlue.bold(groupName));
+                console.log(chartonGreen(`   ↳ Group ID: `) + chartonOrange(`(${groupId})`));
+                console.log(chartonGreen(`${USER_SYMBOL} Sender: `) + chartonPink.bold(`[${senderName}]`));
                 
                 // Show both LID and JID if available
                 if (lidInfo || jidInfo) {
-                    console.log(keithGreen(`${ID_SYMBOL} IDs: `) + keithOrange(lidInfo ? lidInfo : jidInfo));
+                    console.log(chartonGreen(`${ID_SYMBOL} IDs: `) + chartonOrange(lidInfo ? lidInfo : jidInfo));
                     if (lidInfo && jidInfo) {
-                        console.log(keithGreen(`   ↳ `) + keithOrange(jidInfo));
+                        console.log(chartonGreen(`   ↳ `) + chartonOrange(jidInfo));
                     }
                 } else {
-                    console.log(keithGreen(`${ID_SYMBOL} ID: `) + keithOrange(`(${phoneNumber})`));
+                    console.log(chartonGreen(`${ID_SYMBOL} ID: `) + chartonOrange(`(${phoneNumber})`));
                 }
             } else {
-                console.log(keithGreen(`${USER_SYMBOL} Private Chat with: `) + 
-                    keithPink.bold(`[${senderName}] `) + 
-                    keithOrange(`(${phoneNumber})`));
+                console.log(chartonGreen(`${USER_SYMBOL} Private Chat with: `) + 
+                    chartonPink.bold(`[${senderName}] `) + 
+                    chartonOrange(`(${phoneNumber})`));
             }
             
-            console.log(keithGreen(`${TYPE_SYMBOL} Message Type: `) + keithBlue.bold(messageType));
+            console.log(chartonGreen(`${TYPE_SYMBOL} Message Type: `) + chartonBlue.bold(messageType));
             
             if (text && text.trim() !== '') {
-                console.log(keithGold.bold("┌────────────────────────────┐"));
-                console.log(keithGreen(`${CONTENT_SYMBOL} Content:`));
-                console.log(keithGold.bold("├────────────────────────────┤"));
+                console.log(chartonGold.bold("┌────────────────────────────┐"));
+                console.log(chartonGreen(`${CONTENT_SYMBOL} Content:`));
+                console.log(chartonGold.bold("├────────────────────────────┤"));
                 
                 // Handle long text by splitting into lines
                 const maxLineLength = 50;
@@ -181,7 +181,7 @@ class KeithLogger {
                     console.log(chalk.whiteBright('  ' + text));
                 }
                 
-                console.log(keithGold.bold("└────────────────────────────┘"));
+                console.log(chartonGold.bold("└────────────────────────────┘"));
             }
             
             // File logging
@@ -211,14 +211,14 @@ class KeithLogger {
             fs.appendFileSync(logFile, logEntry);
             
         } catch (error) {
-            console.log(keithRed.bold(`${ERROR_SYMBOL} Error in logMessage: ${error.message}`));
+            console.log(chartonRed.bold(`${ERROR_SYMBOL} Error in logMessage: ${error.message}`));
         }
     }
 
     static error(message, error) {
-        console.log(keithRed.bold(`${ERROR_SYMBOL} [ERROR] ${message}`));
+        console.log(chartonRed.bold(`${ERROR_SYMBOL} [ERROR] ${message}`));
         if (error) {
-            console.log(keithRed(error.stack || error.message));
+            console.log(chartonRed(error.stack || error.message));
         }
         
         const today = new Date().toISOString().split('T')[0];
@@ -228,7 +228,7 @@ class KeithLogger {
     }
 
     static success(message) {
-        console.log(keithGreen.bold(`${SUCCESS_SYMBOL} [SUCCESS] ${message}`));
+        console.log(chartonGreen.bold(`${SUCCESS_SYMBOL} [SUCCESS] ${message}`));
         
         const today = new Date().toISOString().split('T')[0];
         const logFile = path.join(logsDir, `success_${today}.log`);
@@ -237,7 +237,7 @@ class KeithLogger {
     }
 
     static warning(message) {
-        console.log(keithYellow.bold(`${WARNING_SYMBOL} [WARNING] ${message}`));
+        console.log(chartonYellow.bold(`${WARNING_SYMBOL} [WARNING] ${message}`));
         
         const today = new Date().toISOString().split('T')[0];
         const logFile = path.join(logsDir, `warnings_${today}.log`);
@@ -246,7 +246,7 @@ class KeithLogger {
     }
 
     static info(message) {
-        console.log(keithBlue.bold(`[INFO] ${message}`));
+        console.log(chartonBlue.bold(`[INFO] ${message}`));
         
         const today = new Date().toISOString().split('T')[0];
         const logFile = path.join(logsDir, `info_${today}.log`);
@@ -255,4 +255,4 @@ class KeithLogger {
     }
 }
 
-module.exports = KeithLogger;
+module.exports = ChartonLogger;

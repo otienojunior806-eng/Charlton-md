@@ -1,22 +1,21 @@
 
 {
-  "name": "KEITH-MD",
+  "name": "CHARLTON-MD",
   "description": "This is a simple whatsapp bot built with nodejs to make your WhatsApp enjoyable",
   "keywords": [
     "bot",
     "whatsapp",
-    "keith",
+    "charlton-md",
     "whatsapp-stickers",
     "anime",
     "whatsapp-bot",
     "whatsapp-sticker-bot",
-    "whatsapp-botto",
     "baileys",
     "baileys-md",
     "md-bot"
   ],
-  "website": "https://keithsite.top",
-  "repository": "https://github.com/kkeizzah25/KEITH-MD.git",
+  "website": "https://charlton-md-bot.netlify.app",
+  "repository": "https://github.com/otienojunior806-eng/Charlton-md.git",
   "logo": "https://i.ibb.co/PsZnb9NH/0d81ac6b1fb1.jpg",
   "success_url": "/",
   "env": {
@@ -70,7 +69,7 @@
     },
     "BOTNAME": {
       "description": "Bot display name",
-      "value": "KEITH-MD",
+      "value": "CHARLTON-MD",
       "required": false
     },
     "AUTO_SOCIAL_DOWNLOAD": {
@@ -80,7 +79,7 @@
     },
     "OWNER_NAME": {
       "description": "your botname",
-      "value": "Keith",
+      "value": "Charlton",
       "required": false
     },
     "MODE": {

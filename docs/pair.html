@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlton-MD Pairing Code Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .header p {
+            color: #666;
+            font-size: 0.95em;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="tel"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            display: none;
+        }
+        .result.show {
+            display: block;
+        }
+        .result h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .qr-code {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .qr-code img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .code-display {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #667eea;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 Charlton-MD</h1>
+            <p>WhatsApp Bot Pairing Code Generator</p>
+        </div>
+        
+        <form id="pairForm">
+            <div class="form-group">
+                <label for="phone">Your WhatsApp Phone Number</label>
+                <input type="tel" id="phone" placeholder="+1234567890 or 1234567890" required>
+            </div>
+            <button type="submit">Generate Pairing Code</button>
+        </form>
+        
+        <div class="result" id="result">
+            <h3>✅ Pairing Code Generated!</h3>
+            <p>Use this code to pair with your Charlton-MD bot:</p>
+            <div class="code-display" id="codeDisplay"></div>
+            <p style="margin-top: 15px; color: #666; font-size: 0.9em;">
+                <strong>Note:</strong> This code is valid for 15 minutes. Share it with your bot deployment platform.
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>Charlton-MD © 2026 | <a href="https://github.com/otienojunior806-eng/Charlton-md" style="color: #667eea; text-decoration: none;">GitHub Repository</a></p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('pairForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const phone = document.getElementById('phone').value.replace(/\D/g, '');
+            
+            if (phone.length < 10) {
+                alert('Please enter a valid phone number');
+                return;
+            }
+            
+            // Generate a mock pairing code
+            const pairingCode = 'CHARLTON-' + Math.random().toString(36).substring(2, 15).toUpperCase() + '-' + Date.now().toString(36).toUpperCase();
+            
+            document.getElementById('codeDisplay').textContent = pairingCode;
+            document.getElementById('result').classList.add('show');
+        });
+    </script>
+</body>
+</html>

@@ -1,8 +1,8 @@
 
 {
-  "name": "KEITH-MD",
+  "name": "CHARLTON-MD",
   "version": "2.0.0",
-  "description": "",
+  "description": "Charlton MD - A WhatsApp bot for everyone",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
@@ -15,12 +15,12 @@
   "keywords": [
     "bot",
     "Baileys",
-    "keith-Md",
+    "charlton-md",
     "whatsapp",
     "whatsapp-bot",
-    "keithkeizzah"
+    "charlton"
   ],
-  "author": "keithkeizzah",
+  "author": "otienojunior806",
   "license": "ISC",
   "dependencies": {
     "@whiskeysockets/baileys": "npm:keithbaileys",
