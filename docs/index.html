@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charlton-MD - WhatsApp Bot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #667eea;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        .hero {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+        }
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .feature p {
+            color: #666;
+        }
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 50px 0;
+        }
+        .quick-link {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+        .quick-link:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transform: translateY(-5px);
+        }
+        .quick-link a {
+            display: block;
+            text-decoration: none;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .quick-link-icon {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+            text-align: center;
+            color: white;
+        }
+        .stat {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+        }
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🤖 Charlton-MD</h1>
+        <p>Your Personal WhatsApp Bot</p>
+    </header>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="pair.html">Pairing</a>
+        <a href="deploy.html">Deploy</a>
+        <a href="fork.html">Fork</a>
+        <a href="https://github.com/otienojunior806-eng/Charlton-md" target="_blank">GitHub</a>
+    </nav>
+    
+    <div class="container">
+        <div class="hero" id="home">
+            <h2>Welcome to Charlton-MD</h2>
+            <p>A powerful WhatsApp bot built with Node.js and Baileys. Automate your WhatsApp experience with custom commands and features.</p>
+            <div class="hero-buttons">
+                <a href="pair.html" class="btn">🔐 Get Pairing Code</a>
+                <a href="deploy.html" class="btn btn-secondary">🚀 Deploy Now</a>
+                <a href="fork.html" class="btn btn-secondary">🍴 Fork Repository</a>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Possibilities</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">⚡</div>
+                <div class="stat-label">Lightning Fast</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">🔒</div>
+                <div class="stat-label">Secure</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">📱</div>
+                <div class="stat-label">Always Online</div>
+            </div>
+        </div>
+        
+        <h2 style="text-align: center; color: white; margin-bottom: 40px;">✨ Features</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🎵</div>
+                <h3>Auto Commands</h3>
+                <p>Create custom commands that respond automatically to messages and mentions.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📥</div>
+                <h3>Media Download</h3>
+                <p>Download videos, images, and content from social media platforms directly.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👥</div>
+                <h3>Group Management</h3>
+                <p>Manage groups with auto-response, moderation, and admin features.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚙️</div>
+                <h3>Customizable</h3>
+                <p>Fully customizable configuration to suit your needs and preferences.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Secure</h3>
+                <p>Built with security in mind using industry-standard encryption.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌍</div>
+                <h3>Multi-Platform</h3>
+                <p>Deploy on Heroku, Railway, Render, or any Node.js hosting platform.</p>
+            </div>
+        </div>
+        
+        <h2 style="text-align: center; color: white; margin-bottom: 40px;">🚀 Quick Start</h2>
+        <div class="quick-links">
+            <div class="quick-link">
+                <div class="quick-link-icon">🔐</div>
+                <a href="pair.html">Generate Pairing Code</a>
+                <p style="color: #666; margin-top: 10px; font-size: 0.9em;">Get your WhatsApp pairing code</p>
+            </div>
+            <div class="quick-link">
+                <div class="quick-link-icon">🍴</div>
+                <a href="fork.html">Fork Repository</a>
+                <p style="color: #666; margin-top: 10px; font-size: 0.9em;">Create your own copy</p>
+            </div>
+            <div class="quick-link">
+                <div class="quick-link-icon">🚀</div>
+                <a href="deploy.html">Deploy Bot</a>
+                <p style="color: #666; margin-top: 10px; font-size: 0.9em;">Get it live online</p>
+            </div>
+            <div class="quick-link">
+                <div class="quick-link-icon">📚</div>
+                <a href="https://github.com/otienojunior806-eng/Charlton-md" target="_blank">Documentation</a>
+                <p style="color: #666; margin-top: 10px; font-size: 0.9em;">View on GitHub</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Charlton-MD © 2026 | Built with ❤️ by <a href="https://github.com/otienojunior806-eng">otienojunior806-eng</a></p>
+        <p style="margin-top: 10px; font-size: 0.9em;">
+            <a href="https://github.com/otienojunior806-eng/Charlton-md">View Repository</a> | 
+            <a href="https://github.com/otienojunior806-eng/Charlton-md/fork">Fork Project</a> | 
+            <a href="https://github.com/otienojunior806-eng/Charlton-md/issues">Report Issues</a>
+        </p>
+    </footer>
+</body>
+</html>
